@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 version = '1.5.0'
 # python face.py
 # Dec 4 2007
@@ -48,16 +48,24 @@ version = '1.5.0'
 	NC File directory and can be saved with save preferences.
 	Added safe z hight.
 """
-from Tkinter import *
-from tkFileDialog import *
+
+import sys
+
+from tkinter import filedialog
+from tkinter import simpledialog
+from tkinter import *
+
 from math import *
-from SimpleDialog import *
-from ConfigParser import *
+#from SimpleDialog import *
+from configparser import *
 from decimal import *
-import tkMessageBox
+
+#import tkMessageBox
 import os
 
-IN_AXIS = os.environ.has_key("AXIS_PROGRESS_BAR")
+IN_AXIS = FALSE
+if 'AXIS_PROGRESS_BAR' in os.environ:
+    IN_AXIS = TRUE
 
 class Application(Frame):
     def __init__(self, master=None):
@@ -419,7 +427,7 @@ class Application(Frame):
         self.fn.close()
 	
     def Simple(self):
-        tkMessageBox.showinfo('Feature', 'Sorry this Feature has\nnot been programmed yet.')
+        tkinter.messagebox.showinfo('Feature', 'Sorry this Feature has\nnot been programmed yet.')
 
     def ClearTextBox(self):
         self.g_code.delete(1.0,END)
@@ -442,7 +450,7 @@ class Application(Frame):
             default=0,
             title='User Info').go()
     def HelpAbout(self):
-        tkMessageBox.showinfo('Help About', 'Programmed by\n'
+        tkinter.messagebox.showinfo('Help About', 'Programmed by\n'
             'Big John T (AKA John Thornton)\n'
             'Rick Calder\n'
             'Brad Hanken\n'
