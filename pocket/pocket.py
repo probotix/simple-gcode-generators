@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 """
+    modified to work with python3 by PROBOTIX
+
     pocket.py G-Code Generator
     Version 1.0
     Copyright (C) <2010>  <Sammel Lothar > <Lothar at Sammellothar dot de>
