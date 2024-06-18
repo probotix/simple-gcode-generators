@@ -661,6 +661,7 @@ class Application(Frame):
                 
         #G-code
         self.gcode.append(self.PostambleVar.get())
+        self.gcode.append('M30')
         self.gcode.append('%')
         if self.MovmentVar.get() == 1:
             tkinter.messagebox.showinfo("Pocket V1"," G41/42 Not implemented ")
